@@ -98,7 +98,39 @@ Mysql目前主要有以下几种索引类型：FULLTEXT，HASH，BTREE，RTREE�
 5. 其他数据类型：BINARY、VARBINARY、ENUM、SET、Geometry、Point、MultiPoint、LineString、MultiLineString、Polygon、GeometryCollection等
 
 
+#### HTTP状态码
+
+1**：信息性状态码
+
+2**：成功状态码
+- 200：OK 请求正常处理
+- 204：No Content请求处理成功，但没有资源可返回
+- 206：Partial Content对资源的某一部分的请求
+
+3**：重定向状态码
+- 301：Moved Permanently 永久重定向
+- 302：Found 临时性重定向
+- 304：Not Modified 缓存中读取
+
+4**：客户端错误状态码
+- 400：Bad Request 请求报文中存在语法错误
+- 401：Unauthorized需要有通过Http认证的认证信息
+- 403：Forbidden访问被拒绝
+- 404：Not Found无法找到请求资源
+
+5**：服务器错误状态码
+- 500：Internal Server Error 服务器端在执行时发生错误
+- 503：Service Unavailable 服务器处于超负载或者正在进行停机维护
+
+
 #### 最近在学什么，看什么书
 
+Spring或者SpringMVC依然有许多东西需要我们进行配置，这样不仅徒增工作量而且在跨平台部署时容易出问题。由于存在这些问题，Spring Boot应运而生，使用Spring Boot可以让我们快速创建一个基于Spring的项目，而让这个Spring项目跑起来我们只需要很少的配置就可以了。Spring Boot主要有如下核心功能：
+- 独立运行的Spring项目：Spring Boot可以以jar包的形式来运行。
+- 内嵌Servlet容器：Spring Boot可以内嵌Tomcat，这样我们无需以war包的形式部署项目。
+- 提供starter简化Maven配置：Spring Boot 通过starter能够帮助我们简化Maven配置。
+- 自动配置Spring
+- 准生产的应用监控
+- 无代码生成和xml配置
 
 #### 有什么想问的
