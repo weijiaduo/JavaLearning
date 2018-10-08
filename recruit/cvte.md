@@ -14,12 +14,18 @@ IoC利用java反射机制，AOP利用代理模式。
 实现AOP的技术，主要分为两大类：一是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；二是采用静态织入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码，属于静态代理。
 
 
-#### IoC Bean 注入的几种方式
+#### IoC Bean 注入方式以及加载流程
 
+注入方式有3种：
 1. 构造器注入
 2. Setter方法注入
 3. 接口注入
 
+加载流程如下：
+1. Resource定位：Resource资源就是xml配置文件，对xml的抽象，包含了BeanDefinition的定义信息。
+2. BeanDefinition的载入和解析：获取到Resource后，需要将Resource中对bean的定义转化为BeanDefinition。
+3. BeanDefinition的注册：构建完数据表示后，需要对这些数据进行注册。具体是调用BeanDefinitionRegistry接口的实现类，完成向容器的注册，就是存入一个HashMap中。
+4. 依赖注入：运用反射机制，生成对应的bean对象。
 
 #### Spring Bean 的作用域
 
@@ -73,19 +79,6 @@ synchronized进行很多了优化，有适应自旋，锁消除，锁粗化，�
 volatile只能保证可见性，不能保证线程安全。在不符合以下两条规则的运算场景中，必须要加锁来保持原子性：
 - 运算结果并不依赖于变量的当前值，或者能够确保只有单一线程修改变量的值；
 - 变量不需要与其他的状态变量共同参与不变约束。
-
-
-#### Mysql 数据库索引的结构
-
-Mysql目前主要有以下几种索引类型：FULLTEXT，HASH，BTREE，RTREE。
-
-1. FULLTEXT：即为全文索引，目前只有MyISAM引擎支持。其可以在CREATE TABLE ，ALTER TABLE，CREATE INDEX 使用，不过目前只有 CHAR、VARCHAR ，TEXT 列上可以创建全文索引。全文索引并不是和MyISAM一起诞生的，它的出现是为了解决WHERE name LIKE “%word%"这类针对文本的模糊查询效率较低的问题。
-
-2. HASH：由于HASH的唯一（几乎100%的唯一）及类似键值对的形式，很适合作为索引。HASH索引可以一次定位，不需要像树形索引那样逐层查找,因此具有极高的效率。但是，这种高效是有条件的，即只在“=”和“in”条件下高效，对于范围查询、排序及组合索引仍然效率不高。
-
-3. BTREE：BTREE索引就是一种将索引值按一定的算法，存入一个树形的数据结构中（二叉树），每次查询都是从树的入口root开始，依次遍历node，获取leaf。这是MySQL里默认和最常用的索引类型。
-
-4. RTREE：RTREE在MySQL很少使用，仅支持geometry数据类型，支持该类型的存储引擎只有MyISAM、BDb、InnoDb、NDb、Archive几种。
 
 
 #### Mysql 的数据类型
