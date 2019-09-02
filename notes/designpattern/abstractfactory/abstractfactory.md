@@ -37,7 +37,7 @@
 3. 抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能。
 4. 具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。
 
-![抽象工厂方法模型结构](./assets/AbstractFactory.png)
+![抽象工厂方法模型结构](./assets/abstractfactory.png)
 
 ---
 
@@ -45,7 +45,7 @@
 
 首先给出示例程序的类结构图：
 
-![示例程序类结构图](./assets/Company_AbstractFactory.png)
+![示例程序类结构图](./assets/company_abstractfactory.png)
 
 其中 AbstractCompany，AbstractMobilePhone 是抽象工厂方法模式中的 Product，HuaweiComputer, HuaweiMobilePhone, XiaomiComputer, XiaomiMobilePhone 是抽象工厂方法模式中的 ConcreteProduct，AbsractCompany 是抽象工厂方法模式中的 AbstractFactory
 HuaweiCompany 和 XiaomiCompany 是抽象工厂方法模式中的 ConcreteFactory。

@@ -31,7 +31,7 @@
 3. 抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能。
 4. 具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。
 
-![工厂方法模型结构](./assets/FactoryMethod.png)
+![工厂方法模型结构](./assets/factorymethod.png)
 
 ---
 
@@ -39,7 +39,7 @@
 
 首先给出示例程序的类结构图：
 
-![示例程序类结构图](./assets/Shape_FactoryMethod.png)
+![示例程序类结构图](./assets/shape_factorymethod.png)
 
 其中 Shape 是工厂方法模式中的 Product，Circle 和 Square 是工厂方法模式中的 ConcreteProduct，ShapeFactory 是工厂方法模式中的 Factory
 ，CircleFactory 和 SquareFactory 是工厂方法模式中的 ConcreteFactory。
